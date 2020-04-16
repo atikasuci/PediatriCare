@@ -16,13 +16,13 @@
             </div>
             <div class="card-body">
               <h5 class="card-title text-center">Member Login</h5>
-              <form class="form-signin" >
+              <form action="<?= site_url('LoginController') ?>" method="post" accept-charset="utf-8">
                 <div class="form-group">
-                  <input type="username" class="form-control" id="inputUsername" placeholder="Username">
+                  <input type="username" class="form-control" name="username" placeholder="Username">
                 </div>
 
                 <div class="form-group" >
-                  <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                  <input type="password" class="form-control" name="password" placeholder="Password">
                 </div>
 
                 <button type="submit" class="btn btn-primary" >Login</button>
