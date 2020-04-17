@@ -45,7 +45,7 @@ class RegistController extends CI_Controller
             //$data['user'] = $this->AccountModel->getUserByUsername($this->input->post('username', true));
             //print_r($data['user']);
             // load home
-            redirect('HomeController');
+            redirect('LoginController');
         }
     }
 }
