@@ -13,7 +13,9 @@ class KonsultasiController extends CI_Controller
     public function index()
     {
         $data['judul'] = 'Konsultasi';
-        $data['konsultasi'] = $this->KonsultasiModel->view();
+        // $data['user'] = $this->session->userdata('user');
+
+        $data['konsultasi'] = $this->KonsultasiModel->getAllKonsultasi();
         $this->load->view('templates/header', $data);
         $this->load->view('Konsultasi/index', $data);
         $this->load->view('templates/footer');
@@ -63,24 +65,5 @@ class KonsultasiController extends CI_Controller
     {
         $this->KonsultasiModel->DeleteKonsultasi($id_konsultasi);
         redirect('KonsultasiController');
-    }
-
-    public function Save()
-    {
-        $data = array();
-
-        // if ($this->input->post('submit')) {
-        //     $upload = $this->KonsultasiModel->upload();
-
-        //     if ($upload['result'] == "success") {
-        // $this->KonsultasiModel->save($upload);
-
-        //         redirect('KonsultasiController');
-        //     } else {
-        //         $data['message'] = $upload['error'];
-        //     }
-        // }
-
-        $this->load->view('KonsultasiController', $data);
     }
 }
