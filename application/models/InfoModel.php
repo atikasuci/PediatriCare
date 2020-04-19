@@ -14,6 +14,13 @@ class InfoModel extends CI_Model
         return $query->result_array();
     }
 
+    public function getInfoById($id)
+    {
+        // get all data
+        $query = $this->db->query("SELECT * FROM info WHERE id_info = '" . $id . "'");
+        return $query->row_array();
+    }
+
     public function AddInfo($data)
     {
         $config['upload_path']         = 'assets/info';  // folder upload 
@@ -39,24 +46,23 @@ class InfoModel extends CI_Model
         return $this->db->insert('info', $data);
     }
 
-    public function UpdateInfo($data, $id_info)
+    public function UpdateInfo($id_info)
     {
+        $data = [
+            "judul" => $this->input->post('judul', true),
+            "isi" => $this->input->post('isi', true),
+        ];
+
         $this->db->where('id_info', $id_info);
-        return $this->db->update('id_info', $data);
+        $this->db->update('info', $data);
     }
 
-    public function DeleteInfo($id_info)
+    public function DeleteInfo($judul)
     {
         // $this->db->where($where);
         // $this->db->delete($info);
-        return $this->db->delete('info', ['id_info' => $id_info]);
+        return $this->db->delete('info', ['judul' => $judul]);
     }
-
-    public function view()
-    {
-        return $this->db->get('info')->result();
-    }
-    private $_table = "info";
 
     public function upload()
     {
