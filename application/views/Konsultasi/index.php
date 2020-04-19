@@ -23,8 +23,8 @@
         <p class="card-text"><?= $k['question'] ?></p>
     </div>
     <div class="card-footer">
-        <a type="button" class="btn" style="color: white;"> lihat</a>
-        <a type="button" href="<?= base_url('InputKonsultasiController '); ?>">Sign Up</a>
+        <a type="button" href="<?= base_url('lihat_konsultasi_controller'); ?> class="btn" style="color: white;"> lihat</a>
+        <a type="button" href="<?= base_url('InputKonsultasiController'); ?>">Sign Up</a>
     </div>
 </div>
 <?php } ?>
