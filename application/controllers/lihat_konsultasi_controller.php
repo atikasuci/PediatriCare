@@ -13,7 +13,7 @@ class lihat_konsultasi_controller extends CI_Controller
         $data['user'] = $this->session->userdata('user');
 
         $this->load->view('templates/header', $data);
-        $this->load->view('lihat_konsultasi', $data);
+        $this->load->view('Konsultasi/lihat_konsultasi', $data);
         $this->load->view('templates/footer');
     }
 }
