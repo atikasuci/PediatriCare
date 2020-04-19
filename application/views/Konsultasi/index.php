@@ -1,19 +1,30 @@
 <!-- <br><br>
 <h1> THIS IS KONSULTASI</h1>
 <p>HAI <?= $user['username']; ?></p> -->
-<h2>Konsultasi</h2><br>
+<style>
 
+footer{
+    background-color:#007B9B;
+}
+.card-footer{
+    background-color:white;
+}
+.card{
+    padding-left:160px;
+    padding-right:160px;
+    border:0px;
+}
+.btn{
+    color:#fff;
+    background-color:#007B9B;
+}
+a{
+    color:#fff;
+}
 
-<table border="1" cellpadding="8">
-    <tr>
-        <th>Judul</th>
-        <th>username</th>
-        <th>dokter</th>
-        <th>question</th>
-        <th>answer</th>
-    </tr>
+</style>
 
-    <?php
+    <!-- <?php
     if (!empty($konsultasi)) {
         foreach ($konsultasi as $data) {
             echo "<tr>";
@@ -28,67 +39,58 @@
     } else {
         echo "<tr><td colspan='5'>Data tidak ada</td></tr>";
     }
-    ?>
+    ?> -->
+
+  <img class="card-img" src="<?php echo base_url(); ?>assets/images/konsul/bg.png">
+  <div class="card-img-overlay">
+  </div>
+</div>
+
+<br><br><br><br>
+<div class="card text-left">
+  <div class="card-header" >
+   <b>Penyebab sakit perut saat bangun tidur</b>    <!-- judul -->
+  </div>
+  <div class="card-body">
+    <h7 class="card-title">Penanya : SAEPUDIN</h7>
+    <br>
+    <!-- ini isi pertanyaan -->
+    <p class="card-text">Dok , sakit perut atas bagian tengah setiap bangun tidur pagi hari nyeri sekali seperti tertekan rasanya, 
+    namun hanya terjadi beberapa menit, namun rutin setiap pagi kenapa ya dok?</p>
+  </div>
+  <div class="card-footer">
+  <a type="button" class="btn" style="color: white;"> lihat</a>
+  </div>
+</div>
+
+<br><br>
+<div class="card text-left ">
+  <div class="card-header" >
+   <b>Saya pernah duduk bersebelahan dengan ODP covid19, apakah saya harus isolasi diri?</b>    <!-- judul -->
+  </div>
+  <div class="card-body">
+    <h7 class="card-title">Penanya : VIjay</h7>
+    <br>
+    <p class="card-text">sabtu siang kemarinsaya sempat bincang-bincang dengan teman-teman sekantor di ruangan tamu, 
+    karena tidak ada satu pun diantara kami yang berstatus ODP sebelumnya, maka kami ngobrol seperti biasa saja. 
+    baru kemudian pada hari minggu siang, salah satu rekan kami yang ikut nimbrung itu berstatus ODP karena pernah berinteraksi 
+    dengan pasien covid19 lima hari sebelumnya yang juga baru dinyatakan positif pada minggu siang itu. 
+    apa yang harus saya lakukan untuk upaya penanggulangan covid dengan kondisi resiko yang saya alami ini dok? untuk informasi tambahan,
+     teman saya itu tidak ada gejala apapun, batuk pilek atau sakit tenggorokan, kami juga tidak berjabat tangan hanya berbincang seperti biasa, 
+     jarak duduk kami pun sekitar 60 meter.terimakasih dok atas perhatiannya...wassalamualaikum wr wb.</p>
+  </div>
+  <div class="card-footer">
+  <a type="button" class="btn" style="color: white;"> lihat</a>
+  <a type="button" href="<?= base_url('input_konsultasi_controller'); ?>">Sign Up</a>
+  </div>
+</div>
+
 </table>
 <br></bbr>
 </div>
 
-<div class="modal fade" id="AddKonsultasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <center>
-                    <h2>TAMBAH KONSULTASI</h2>
-                </center>
-            </div>
-            <div class="modal-body">
-                <!-- isi form ini -->
-                <div style="color: red;"><?php echo (isset($message)) ? $message : ""; ?></div>
 
-                <?php echo form_open("KonsultasiController/Save", array('enctype' => 'multipart/form-data')); ?>
-                <table cellpadding="8">
-                    <tr>
-                        <td>judul</td>
-                        <td><input type="text" name="input_judul" value="<?php echo set_value('input_judul'); ?>" required></td>
-                    </tr>
-                    <tr>
-                        <td>username</td>
-                        <td><input type="text" name="input_isi" value="<?php echo set_value('input_username'); ?>" required></td>
-                    </tr>
-                    <tr>
-                        <td>dokter</td>
-                        <td><input type="text" name="input_isi" value="<?php echo set_value('input_dokter'); ?>" required></td>
-                    </tr>
-                    <tr>
-                        <td>question</td>
-                        <td><input type="text" name="input_isi" value="<?php echo set_value('input_question'); ?>" required></td>
-                    </tr>
-                    <tr>
-                        <td>answer</td>
-                        <td><input type="text" name="input_isi" value="<?php echo set_value('input_answer'); ?>" required></td>
-                    </tr>
-                </table>
-            </div>
-            <div class="modal-footer">
-                <input type="submit" class="btn btn-primary" name="submit" value="Simpan">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                <?php echo form_close(); ?>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- 
-<h2>KONSULTASI</h2><br>
-<div class="media position-relative">
-    <img src="assets/info/covid19.jpg" class="mr-3">
-    <a class="media-body">
-        <h5 class="mt-3">Covid-19</h5>
-        <p>Covid-19 adalah penyakit yang ditimbulkan oleh infeksi virus corona baru atau SARS-CoV-2 yang berasal dari keluarga corona.
-            Namun, jenis virus yang menyebar kali ini belum pernah ada sebelumnya.</p>
-    </a>
-    </!-->
-<a href="<?= base_url('Konsultasi/index'); ?>" class="stretched-link">Klik here to know...</a><br>
-<a type="button" class="btn btn-primary" data-toggle="modal" data-target="#AddKonsultasi"> Create.</a></div>
-<!-- <a class="small" href="<?= base_url('KonsultasiController/AddKonsultasi'); ?>">Create</a> -->
-</div>
+<br>
+<br>
+<br>
+<footer>.</footer>
