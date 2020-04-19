@@ -42,7 +42,42 @@
                 </div>
             </div>
         </div>
+        
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit1">TAMBAH </button>
 
+        <div class="modal fade" id="edit1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+            <center><h2>TAMBAH DATA RUMAH SAKIT</h2></center>
+            </div>
+            <div class="modal-body">
+            <!-- isi form ini -->
+            <form method="POST" action="">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Nama Rumah Sakit</label>
+                    <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Nama Rumah Sakit" name="" required >
+                </div>
+
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Alamat</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Alamat" name=""required>
+                </div>
+
+                <div class="form-group">
+					<label>Foto</label><br>
+					<input type="file" class="form-control" name="foto">
+				</div>	
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                <input  type="submit" class="btn btn-primary" id="hapus" value="Submit" placeholder="Simpan">
+            </form>
+            </div>
+            </div>
+        </div>
+        </div>
     </div>
 
 </body>
