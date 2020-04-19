@@ -13,9 +13,9 @@ class InfoController extends CI_Controller
     public function index()
     {
         $data['judul'] = 'Info';
-        $data['info'] = $this->InfoModel->view();
+        $data['info'] = $this->InfoModel->getAllInfo();
         $this->load->view('templates/header', $data);
-        $this->load->view('Info/index', $data);
+        $this->load->view('Info/Indexcoba', $data);
         $this->load->view('templates/footer');
     }
 
@@ -40,28 +40,29 @@ class InfoController extends CI_Controller
         redirect('InfoController');
     }
 
-    public function UpdateInfo()
+    public function UpdateInfo($id_info)
     {
-        $data = [
-            'id_info' => $this->input->post('id_info', true),
-            'judul' => $this->input->post('judul', true),
-            'isi' => $this->input->post('isi', true),
-            'photo' => $this->input->post('photo', true),
-        ];
+        $data['judul'] = 'Form Ubah Info';
+        $data['info'] = $this->InfoModel->getAllInfo();
 
-        $id = $this->input->post('id_info', true);
-        // Load updateinfo($data,$id) from InfoModel
-        $this->InfoModel->UpdateInfo($data, $id);
-        // Redirect to InfoController after edit data.
-        redirect('InfoController');
+        //from library form_validation, set rules for nama, nim, email = required
+        $this->form_validation->set_rules('judul', 'judul', 'required');
+        $this->form_validation->set_rules('isi', 'isi', 'required');
+
+        if ($this->form_validation->run() != false) {
+            $this->InfoModel->UpdateInfo($id_info);
+            $this->session->set_flashdata('flash', 'Diubah');
+            redirect('InfoController');
+        } else {
+            //$this->load->view('templates/header', $data);
+            $this->load->view('Info/Indexcoba', $data);
+            // $this->load->view('templates/footer');
+        }
     }
 
-    public function DeleteInfo($id_info)
+    public function DeleteInfo($judul)
     {
-        // $where = array('id_info' => $id_info);
-        // $this->InfoModel->DeleteInfo($where, 'info');
-        // redirect('InfoController');
-        $this->InfoModel->DeleteInfo($id_info);
+        $this->InfoModel->DeleteInfo($judul);
         redirect('InfoController');
     }
 
@@ -82,5 +83,14 @@ class InfoController extends CI_Controller
         }
 
         $this->load->view('InfoController', $data);
+    }
+
+    public function view($id)
+    {
+        $data['judul'] = 'Info Page';
+        $data['info_detail'] = $this->InfoModel->getInfoById($id);
+        $this->load->view('templates/header', $data);
+        $this->load->view('Info/Info', $data);
+        $this->load->view('templates/footer');
     }
 }
