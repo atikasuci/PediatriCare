@@ -56,7 +56,7 @@
             <form method="POST" action="">
                 <div class="form-group">
                     <label for="formGroupExampleInput">Nama Rumah Sakit</label>
-                    <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Nama Rumah Sakit" name="" required >
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Rumah Sakit" name="" required >
                 </div>
 
                 <div class="form-group">
