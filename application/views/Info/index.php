@@ -1,12 +1,14 @@
-<html lang="en">   
+<html lang="en">
+
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/login.css">  -->   
+    <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/login.css">  -->
 </head>
+
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container text-center">
@@ -20,55 +22,104 @@
     <div class="container">
         <div class="row">
             <div class="col text-center">
-            <h3>Info Seputar Kesehatan</h3>
+                <h3>Info Seputar Kesehatan</h3>
             </div>
         </div>
         <br></br>
-        <div class="media position-relative">
-            <img src="assets/info/covid19.jpg" class="mr-3" alt="...">
-            <div class="media-body">
-                <h5 class="mt-0">Media with stretched link</h5>
-                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                <a href="#" class="stretched-link">klik disini</a>
-                <button class="btn btn-primary btn-sm" type="submit">Edit</button>
-                <button class="btn btn-primary btn-sm" type="submit">Hapus</button>
+        <?php foreach ($info as $i) { ?>
+            <div class="media position-relative">
+                <img src="assets/images/info/<?= $i['photo'] ?>" class="mr-3" alt="..." style="width:30%;">
+                <div class="media-body">
+                    <h5 class="mt-0"><?= $i['judul'] ?></h5>
+                    <p><?= $i['isi'] ?></p>
+                    <a href="<?= base_url('InfoController/view/') . $i['id_info'] ?>" class="stretched-link">klik disini</a>
+                    <!-- <a class="btn btn-primary btn-sm" href="<?= base_url('InfoController/UpdateInfo/') . $i['id_info'] ?>" role="button">Update</a> -->
+                    <button class="btn btn-primary btn-sm" type="submit">Hapus</button>
+                    <a type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#UpdateInfo"> Update.</a>
+                </div>
             </div>
-        </div>
-        <br>
-        <div class="media position-relative">
-            <img src="assets/info/covid19.jpg" class="mr-3" alt="...">
-            <div class="media-body">
-                <h5 class="mt-0">Media with stretched link</h5>
-                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                <a href="#" class="stretched-link">klik disini</a>
-                <button class="btn btn-primary btn-sm" type="submit">Edit</button>
-                <button class="btn btn-primary btn-sm" type="submit">Hapus</button>
-            </div>
-        </div>
-        <br>
-        <div class="media position-relative">
-            <img src="assets/info/covid19.jpg" class="mr-3" alt="...">
-            <div class="media-body">
-                <h5 class="mt-0">Media with stretched link</h5>
-                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                <a href="#" class="stretched-link">klik disini</a>
-                <button class="btn btn-primary btn-sm" type="submit">Edit</button>
-                <button class="btn btn-primary btn-sm" type="submit">Hapus</button>
-            </div>
-        </div>
-        <br>
-        <div class="media position-relative">
-            <img src="assets/info/covid19.jpg" class="mr-3" alt="...">
-            <div class="media-body">
-                <h5 class="mt-0">Media with stretched link</h5>
-                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                <a href="#" class="stretched-link">klik disini</a>
-                <button class="btn btn-primary btn-sm" type="submit">Edit</button>
-                <button class="btn btn-primary btn-sm" type="submit">Hapus</button>
-            </div>
-        </div>
-        <br>
-        <button class="btn btn-primary btn-sm" type="submit">tambah</button>
+            <br>
+        <?php } ?>
+
+        <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#AddInfo"> Create.</a>
+    </div>
+    <!-- <button class="btn btn-primary btn-sm" type="submit">tambah</button> -->
     <div>
 
 </body>
+
+<div class="modal fade" id="AddInfo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <center>
+                    <h2>TAMBAH INFO</h2>
+                </center>
+            </div>
+            <div class="modal-body">
+                <!-- isi form ini -->
+                <div style="color: red;"><?php echo (isset($message)) ? $message : ""; ?></div>
+
+                <?php echo form_open("InfoController/Save", array('enctype' => 'multipart/form-data')); ?>
+                <table cellpadding="8">
+                    <tr>
+                        <td>judul</td>
+                        <td><input type="text" name="input_judul" value="<?php echo set_value('input_judul'); ?>" required></td>
+                    </tr>
+                    <tr>
+                        <td>isi</td>
+                        <td><input type="text" name="input_isi" value="<?php echo set_value('input_isi'); ?>" required></td>
+                    </tr>
+                    <tr>
+                        <td>Gambar</td>
+                        <td><input type="file" name="input_gambar" required></td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" class="btn btn-primary" name="submit" value="Simpan">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                <?php echo form_close(); ?>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="UpdateInfo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <center>
+                    <h2>UPDATE INFO</h2>
+                </center>
+            </div>
+            <div class="modal-body">
+                <!-- isi form ini -->
+                <div style="color: red;"><?php echo (isset($message)) ? $message : ""; ?></div>
+
+                <?php echo form_open("<?=base_url().'InfoController/UpdateInfo/'.?>", array('enctype' => 'multipart/form-data')); ?>
+                <table cellpadding="8">
+                    <tr>
+                        <td>judul</td>
+                        <td><input type="text" name="input_judul" value="<?php echo set_value('input_judul'); ?>" required></td>
+                    </tr>
+                    <tr>
+                        <td>isi</td>
+                        <td><input type="text" name="input_isi" value="<?php echo set_value('input_isi'); ?>" required></td>
+                    </tr>
+                    <tr>
+                        <td>Gambar</td>
+                        <td><input type="file" name="input_gambar" required></td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" class="btn btn-primary" name="submit" value="Simpan">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                <?php echo form_close(); ?>
+            </div>
+        </div>
+    </div>
+</div>
