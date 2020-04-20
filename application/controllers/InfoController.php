@@ -8,6 +8,7 @@ class InfoController extends CI_Controller
         // load InfoModel
         $this->load->model('InfoModel');
         $this->load->library('form_validation');
+        $this->load->helper(array('form', 'url'));
     }
 
     public function index()
@@ -17,15 +18,6 @@ class InfoController extends CI_Controller
         $this->load->view('templates/header', $data);
         $this->load->view('Info/index', $data);
         $this->load->view('templates/footer');
-    }
-
-    public function getAllInfo()
-    {
-        //use query builder to get data table "Info"
-        $this->db->select('*');
-        $this->db->from('info');
-        $query = $this->db->get();
-        return $query->result_array();
     }
 
     public function AddInfo()
