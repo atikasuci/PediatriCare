@@ -41,9 +41,8 @@ class RumahSakitController extends CI_Controller
                 "alamat" => $this->input->post('alamat', true),
                 "notelp" => $this->input->post('notelp', true)
             ];
-            $this->RumahSakitModel->addRumahSakit();
+            $this->RumahSakitModel->addRumahSakit($add);
             // load rscon
-
         }
         redirect('RumahSakitController');
     }
