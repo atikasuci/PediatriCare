@@ -27,6 +27,8 @@
                         <h5 class="mt-0"><?= $rs['nama'] ?></h5>
                         <p><?= $rs['alamat'] ?></p>
                         <p><?= $rs['notelp'] ?></p>
+                        <a type="button" class="btn btn-danger btn-sm" href="<?php echo base_url() . 'RumahSakitController/delete/' . $rs['id_rumahsakit'] ?>" onClick="return confirm('Apakah Anda Yakin?')">Delete</a></td>
+                        <a type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#UpdateInfo"> Update.</a>
                     </div>
                 </div>
             </div>
@@ -59,7 +61,7 @@
 
                             <div class="form-group">
                                 <label>No Telp</label><br>
-                                <input type="text" class="form-control" name="notelp">
+                                <input type="text" class="form-control" placeholder="Nomor Telp" name="notelp">
                             </div>
 
 
