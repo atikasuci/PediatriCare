@@ -43,6 +43,7 @@ class RumahSakitController extends CI_Controller
             ];
             $this->RumahSakitModel->addRumahSakit($add);
             // load rscon
+
         }
         redirect('RumahSakitController');
     }
@@ -53,8 +54,30 @@ class RumahSakitController extends CI_Controller
         redirect('RumahSakitController');
     }
 
-    public function FunctionName($value = '')
+    public function update($id)
     {
-        # code...
+        $data['judul'] = 'Rumah Sakit';
+        $data['rumahsakit'] = $this->RumahSakitModel->getAllRumahSakit();
+
+        //from library form_validation, set rules for nama, nim, email = required
+        $this->form_validation->set_rules('nama', 'nama', 'required');
+        $this->form_validation->set_rules('alamat', 'alamat', 'required');
+        $this->form_validation->set_rules('notelp', 'notelp', 'required');
+
+        if ($this->form_validation->run() == false) {
+
+            $this->load->view('templates/header', $data);
+            $this->load->view('rumahsakit/index', $data);
+            $this->load->view('templates/footer');
+        } else {
+            $update = [
+                "id_rumahsakit" => $id,
+                "nama" => $this->input->post('nama', true),
+                "alamat" => $this->input->post('alamat', true),
+                "notelp" => $this->input->post('notelp', true)
+            ];
+            $this->RumahSakitModel->updateRumahSakit($id,$update);
+            redirect('RumahsakitController');
+        }
     }
 }
