@@ -17,26 +17,26 @@
               <ul class="text-center">
                 <a>Member Login</a>
               </ul>
+              <form action = "<?= site_url('LoginController') ?>" method="post" accept-charset="utf-8">
+                <label class="label control-label">Username</label>
+                <input type="username" class="form-control" id="username" placeholder="Username">
 
-              <label class="label control-label">Username</label>
-              <input type="username" class="form-control" id="username" placeholder="Username">
+                <label class="label control-label">Password</label>
+                <input type="username" class="form-control" id="password" placeholder="Password">
 
-              <label class="label control-label">Password</label>
-              <input type="username" class="form-control" id="password" placeholder="Password">
+                <a href="#"><div class="btn btn-info">Login</div></a>
 
-              <a href="#"><div class="btn btn-info">Login</div></a>
+                <p class="text-center">Or </p>
 
-              <p class="text-center">Or </p>
+                <div class="signup text-center">
+                    <a href="<?= base_url('RegistController'); ?>">Sign Up</a>
+                </div>
 
-              <div class="signup text-center">
-                  <a href="<?= base_url('RegistController'); ?>">Sign Up</a>
-              </div>
+                <div class="back text-left">
+                    <a class="btn btn-secondary btn-sm active" href="">back</a>
+                </div>
 
-              <div class="back text-left">
-                  <a class="btn btn-secondary btn-sm active" href="">back</a>
-              </div>
-
-              <form>
+              </form>
           </div>
         </div>
       </div>
