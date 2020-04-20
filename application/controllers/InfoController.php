@@ -55,7 +55,7 @@ class InfoController extends CI_Controller
             redirect('InfoController');
         } else {
             //$this->load->view('templates/header', $data);
-            $this->load->view('Info/Indexcoba', $data);
+            $this->load->view('Info/Index', $data);
             // $this->load->view('templates/footer');
         }
     }
