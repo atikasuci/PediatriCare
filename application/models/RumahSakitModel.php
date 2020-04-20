@@ -11,20 +11,14 @@ class RumahSakitModel extends CI_Model
 
     public function addRumahSakit($data)
     {
-        //use query builder to insert $data to table "rumahsakit"
-        // $data = [
-        //     "id_rumahsakit" => '',
-        //     "nama" => $this->input->post('nama', true),
-        //     "alamat" => $this->input->post('alamat', true),
-        //     "notelp" => $this->input->post('notelp', true)
-        // ];
         $this->db->insert('rumahsakit', $data);
     }
 
     public function deleteRumahSakit($id)
     {
-        $this->db->where('id', $id);
-        return $this->db->delete('rumahsakit');
+        return $this->db->delete('rumahsakit', ['id_rumahsakit' => $id]);
+        // $this->db->where('id', $id);
+        // return $this->db->delete('rumahsakit');
     }
 
     public function updateRumahSakit($id)
