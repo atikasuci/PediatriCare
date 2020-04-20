@@ -34,7 +34,7 @@
                     <p><?= $i['isi'] ?></p>
                     <a href="<?= base_url('InfoController/view/') . $i['id_info'] ?>" class="stretched-link">klik disini</a>
                     <!-- <a class="btn btn-primary btn-sm" href="<?= base_url('InfoController/UpdateInfo/') . $i['id_info'] ?>" role="button">Update</a> -->
-                    <button class="btn btn-primary btn-sm" type="submit">Hapus</button>
+                    <a type="button" class="btn btn-danger btn-sm" href="<?php echo base_url() . 'InfoController/DeleteInfo/' . $i['id_info'] ?>" onClick="return confirm('Apakah Anda Yakin?')">Delete</a></td>
                     <a type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#UpdateInfo"> Update.</a>
                 </div>
             </div>
@@ -98,19 +98,19 @@
                 <!-- isi form ini -->
                 <div style="color: red;"><?php echo (isset($message)) ? $message : ""; ?></div>
 
-                <?php echo form_open("<?=base_url().'InfoController/UpdateInfo/'.?>", array('enctype' => 'multipart/form-data')); ?>
+                <?php echo form_open('InfoController/UpdateInfo/', array('enctype' => 'multipart/form-data')); ?>
                 <table cellpadding="8">
-                    <tr>
-                        <td>judul</td>
-                        <td><input type="text" name="input_judul" value="<?php echo set_value('input_judul'); ?>" required></td>
-                    </tr>
-                    <tr>
-                        <td>isi</td>
-                        <td><input type="text" name="input_isi" value="<?php echo set_value('input_isi'); ?>" required></td>
-                    </tr>
-                    <tr>
-                        <td>Gambar</td>
-                        <td><input type="file" name="input_gambar" required></td>
+                    <input type="hidden" class="form-control" id="formGroupExampleInput" placeholder="id_info" name="id_info" value="<?php echo $i['id_info'] ?>" required>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Judul</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Judul" name="judul" value="<?php echo $i['judul'] ?>" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Isi</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Isi" name="isi" value="<?php echo $i['isi'] ?>" required>
+                    </div>
+                    <td>Gambar</td>
+                    <td><input type="file" name="input_gambar" required></td>
                     </tr>
 
                 </table>
