@@ -1,51 +1,45 @@
 <html>
-  <head>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="<?php base_url(); ?>assets/css/login.css" type="text/css" />
-    <!------ Include the above in your HEAD tag ---------->
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-10 col-xl-9 mx-auto">
-          <div class="card card-signin flex-row my-5">
-            <div class="card-img-left d-none d-md-flex">
-              <img src="assets/images/login/foto_login.png" width="500px">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title text-center">Member Login</h5>
-              <form action="<?= site_url('LoginController') ?>" method="post" accept-charset="utf-8">
-                <div class="form-group">
-                  <input type="username" class="form-control" name="username" placeholder="Username">
-                </div>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="js/bootstrap.js">
+  <link rel="stylesheet" type="text/css" href="<?php base_url(); ?>assets/css/login.css"/> 
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div class="row" style="margin-top:70px">
+          <div class="col-md-6">
+            <img src="assets/images/login/foto_login.png" width="450px" />
+          </div>
+          <div class="col-md-6">
+              <ul class="text-center">
+                <a>Member Login</a>
+              </ul>
 
-                <div class="form-group" >
-                  <input type="password" class="form-control" name="password" placeholder="Password">
-                </div>
+              <label class="label control-label">Username</label>
+              <input type="username" class="form-control" id="username" placeholder="Username">
 
-                <button type="submit" class="btn btn-primary" >Login</button>
+              <label class="label control-label">Password</label>
+              <input type="username" class="form-control" id="password" placeholder="Password">
 
-                <br>
-                  <p>or</p>
-                </br>
+              <a href="#"><div class="btn btn-info">Login</div></a>
 
-                <div class="signup">
+              <p class="text-center">Or </p>
+
+              <div class="signup text-center">
                   <a href="<?= base_url('RegistController'); ?>">Sign Up</a>
-                </div>
+              </div>
 
-                <div class="text-left">
+              <div class="back text-left">
                   <a class="btn btn-secondary btn-sm active" href="">back</a>
-                </div>
-              </form>
-            </div>
+              </div>
+
+              <form>
           </div>
         </div>
       </div>
     </div>
-  </body>
-</html>
-
-  
-   
+  </div>
+</body>
