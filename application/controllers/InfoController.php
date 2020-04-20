@@ -81,8 +81,8 @@ class InfoController extends CI_Controller
                 $data['message'] = $upload['error'];
             }
         }
-
-        $this->load->view('InfoController', $data);
+            redirect('InfoController');
+//         $this->load->view('InfoController', $data);
     }
 
     public function view($id)
