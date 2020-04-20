@@ -2,11 +2,6 @@
 
 class InfoModel extends CI_Model
 {
-    public function __construct()
-    {
-        parent::__construct();
-        $this->load->helper(array('form', 'url'));
-    }
     public function getAllInfo()
     {
         // get all data
