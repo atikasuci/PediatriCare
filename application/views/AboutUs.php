@@ -142,24 +142,16 @@ ul{
             <figure><img src="<?php echo base_url(); ?>assets/images/drea.jpg" class="img-responsive" alt=""></figure>
             <h3>Andrea Rahmadanisya</h3>
             <p>Back-end</p>
-            <h6>1301174035</h6>
+            <h6>1301184146</h6>
           </div>
       </li>
       <div>
-      
-      <ul class="row">
+    </ul>
+    <ul class="row">
       <li class="col-6 col-md-4">
           <div class="cnt-block equal-hight" style="height: 349px;">
-          <figure><img src="<?php echo base_url(); ?>assets/images/arya.jpg"></figure>
-            <h3>Arya pratama anugerah R</h3>
-            <p>Front-End</p>
-            <h6>1301184336</h6>
-          </div>
-       </li>
-      <li class="col-6 col-md-4">
-          <div class="cnt-block equal-hight" style="height: 349px;">
-          <figure><img src="<?php echo base_url(); ?>assets/images/bagas.jpg" class="img-responsive" alt=""></figure>
-            <h3>Bagaz milen alhafidz</h3>
+            <figure><img src="<?php echo base_url(); ?>assets/images/bagas.jpg" class="img-responsive" alt=""></figure>
+            <h3>Bagas millen alhafidz</h3>
             <p>Back-end</p</p>
             <h6>1301180184</h6>
             <br>
@@ -167,13 +159,20 @@ ul{
       </li>
       <li class="col-6 col-md-4">
           <div class="cnt-block equal-hight" style="height: 349px;">
-          <figure><img src="<?php echo base_url(); ?>assets/images/teteh.jpg" float ="right"></figure>
+            <figure><img src="<?php echo base_url(); ?>assets/images/tehatik.jpg"></figure>
             <h3>Atika Suci Handayan</h3>
             <p>Front-End</p>
             <h6>1301174035</h6>
           </div>
-       </li>
-    </ul>
+      </li>
+      <li class="col-6 col-md-4">
+          <div class="cnt-block equal-hight" style="height: 349px;">
+            <figure><img src="<?php echo base_url(); ?>assets/images/arya.jpg"></figure>
+            <h3>Arya pratama anugerah R</h3>
+            <p>Front-End</p>
+            <h6>1301184336</h6>
+          </div>
+      </li>
     </ul>
   </div>
 </section>
