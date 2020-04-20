@@ -57,11 +57,9 @@ class InfoModel extends CI_Model
         $this->db->update('info', $data);
     }
 
-    public function DeleteInfo($judul)
+    public function DeleteInfo($id_info)
     {
-        // $this->db->where($where);
-        // $this->db->delete($info);
-        return $this->db->delete('info', ['judul' => $judul]);
+        return $this->db->delete('info', ['id_info' => $id_info]);
     }
 
     public function upload()
