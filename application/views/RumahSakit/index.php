@@ -24,7 +24,6 @@
             <br>
         <?php } ?>
 
-
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit1">TAMBAH </button>
 
         <div class="modal fade" id="edit1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
@@ -36,27 +35,19 @@
                         </center>
                     </div>
                     <div class="modal-body">
-                        <!-- isi form ini -->
                         <form method="POST" action="<?= base_url() ?>RumahSakitController/addRs">
                             <div class="form-group">
-                                <label for="formGroupExampleInput">Nama Rumah Sakit</label>
                                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Rumah Sakit" name="nama" required>
                             </div>
-
                             <div class="form-group">
-                                <label for="formGroupExampleInput">Alamat</label>
                                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Alamat" name="alamat" required>
                             </div>
-
                             <div class="form-group">
-                                <label>No Telp</label><br>
                                 <input type="text" class="form-control" placeholder="Nomor Telp" name="notelp">
                             </div>
-
-
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
                                 <input type="submit" class="btn btn-primary" id="hapus" value="Submit" placeholder="Simpan">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
                             </div>
                         </form>
                     </div>
@@ -75,36 +66,28 @@
                         </center>
                     </div>
                     <div class="modal-body">
-                        <!-- isi form ini -->
                         <form method="POST" action="<?= base_url().'RumahSakitController/update/'.$rs['id_rumahsakit'] ?>">
                             <div class="form-group">
                                 <label for="formGroupExampleInput">Nama Rumah Sakit</label>
                                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Rumah Sakit" name="nama" value="<?=$rs['nama']?>" required>
                             </div>
-
                             <div class="form-group">
                                 <label for="formGroupExampleInput">Alamat</label>
                                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Alamat" name="alamat" value="<?=$rs['alamat']?>" required>
                             </div>
-
                             <div class="form-group">
                                 <label>No Telp</label><br>
                                 <input type="text" class="form-control" placeholder="Nomor Telp" name="notelp" value="<?=$rs['notelp']?>">
                             </div>
-
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
                                 <input type="submit" class="btn btn-primary" id="hapus" value="Submit" placeholder="Simpan">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
                             </div>
                         </form>
                     </div>
-
                 </div>
             </div>
         </div>
     <?php }?>
-
-
     </div>
-
 </body>
