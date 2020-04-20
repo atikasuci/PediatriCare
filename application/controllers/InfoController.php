@@ -55,14 +55,14 @@ class InfoController extends CI_Controller
             redirect('InfoController');
         } else {
             //$this->load->view('templates/header', $data);
-            $this->load->view('Info/Index', $data);
+            $this->load->view('Info/Indexcoba', $data);
             // $this->load->view('templates/footer');
         }
     }
 
-    public function DeleteInfo($judul)
+    public function DeleteInfo($id_info)
     {
-        $this->InfoModel->DeleteInfo($judul);
+        $this->InfoModel->DeleteInfo($id_info);
         redirect('InfoController');
     }
 
