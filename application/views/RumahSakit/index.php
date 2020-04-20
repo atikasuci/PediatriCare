@@ -1,14 +1,3 @@
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/login.css">  -->
-</head>
-
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container text-center">
@@ -28,7 +17,7 @@
                         <p><?= $rs['alamat'] ?></p>
                         <p><?= $rs['notelp'] ?></p>
                         <a type="button" class="btn btn-danger btn-sm" href="<?php echo base_url() . 'RumahSakitController/delete/' . $rs['id_rumahsakit'] ?>" onClick="return confirm('Apakah Anda Yakin?')">Delete</a></td>
-                        <a type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#UpdateInfo"> Update.</a>
+                        <a type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#UpdateRS<?=$rs['id_rumahsakit']?>"> Update</a>
                     </div>
                 </div>
             </div>
@@ -75,6 +64,47 @@
                 </div>
             </div>
         </div>
+
+    <?php foreach ($rumahsakit as $rs) {?>
+        <div class="modal fade" id="UpdateRS<?=$rs['id_rumahsakit']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <center>
+                            <h2>EDIT DATA RUMAH SAKIT</h2>
+                        </center>
+                    </div>
+                    <div class="modal-body">
+                        <!-- isi form ini -->
+                        <form method="POST" action="<?= base_url().'RumahSakitController/update/'.$rs['id_rumahsakit'] ?>">
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">Nama Rumah Sakit</label>
+                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Rumah Sakit" name="nama" value="<?=$rs['nama']?>" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">Alamat</label>
+                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Alamat" name="alamat" value="<?=$rs['alamat']?>" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>No Telp</label><br>
+                                <input type="text" class="form-control" placeholder="Nomor Telp" name="notelp" value="<?=$rs['notelp']?>">
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                <input type="submit" class="btn btn-primary" id="hapus" value="Submit" placeholder="Simpan">
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    <?php }?>
+
+
     </div>
 
 </body>
