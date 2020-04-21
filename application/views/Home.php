@@ -7,21 +7,34 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/login.css">  -->
     <!-- <style>.carousel-inner > .item > img,.carousel-inner > .item > a > img { width: 80%; margin: auto;}</style> -->
+
+<style>
+  .carousel-inner img {
+      height: 500px;
+  }
+  .card{
+    padding:0px;
+  }
+</style>
+
 </head>
 <body>
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container text-center">
-            <h1 class="display-4">COVID-19 (NOVEL CORONAVIRUS)</h1>
-            <p class="lead">Pengunjung ke rumah sakit kami dibatasi hanya untuk satu anggota keluarga dan semua pengungjung akan diperiksa</p>
-            <a class="btn btn-primary btn-lg" href="#" role="button">Read more</a>
-        </div>
-    </div>
 
+    <div class="card text-black" padding-left="0">
+      <img class="card-img" src="assets/images/home/bg_home2.png" alt="Card image" width="1200" height="400">
+      <div class="card-img-overlay text-center">
+      <br><br><br><br><br>
+        <h1 class="card-title">COVID-19 (NOVEL CORONAVIRUS)</h1>
+        <p class="card-text">Mari kita cegah si kecil agar terhindar dari penyakit covid-19</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Read more</a>
+      </div>
+    </div>
+<br><br>
     <div class="container">
       <div class="row">
         <div class="col">
           <div class="thumbnail">
-            <img src="assets/images/logo/1.png" width="450" height="300" class="img-responsive">
+            <img src="assets/images/logo/1.png" width="400" height="300" class="img-responsive">
           </div>
         </div>
         <div class="col">
@@ -31,7 +44,7 @@
         </div>
       </div>
     </div>
-
+<br><br>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ul class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -59,6 +72,8 @@
       </a>
     </div>
 
+    <br><br>
+
     <div class="container">
       <div class="row">
         <div class="col text-center">
@@ -66,20 +81,21 @@
         </div>
       </div>
     
+    <br><br><br>
 
       <div class="row">
         <div class="col">
-          <div class="card" style="width: 18rem;">
+          <div class="card">
             <div class="card-body text-center" >
               <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p class="card-body">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               <a href="#" class="card-link">Card link</a>
             </div>
           </div>
         </div>
 
         <div class="col">
-          <div class="card" style="width: 18rem;">
+          <div class="card">
             <div class="card-body text-center" >
               <h5 class="card-title">Card title</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -96,3 +112,5 @@
 </html>
 
 
+<br><br><br><br>
+<footer>,</footer>
