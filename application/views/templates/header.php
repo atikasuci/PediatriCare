@@ -38,6 +38,7 @@
             </div>
             <div class="text-right" class="collapse navbar-collapse">
                 <a class="btn navbar-dark my-2 my-sm-0" href="<?= base_url('LoginController'); ?>">Login</a>
+                <a class="btn navbar-dark my-2 my-sm-0" href="<?= base_url(''); ?>">Logout</a>
             </div>
         </div>
     </nav>
