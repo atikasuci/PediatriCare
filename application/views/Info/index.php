@@ -1,12 +1,6 @@
-<style>
-    body{
-        background-color:white;
-    }
-    .media{
-         padding-right:50px;
-    }
-
-    </style>
+    <head>
+    <link rel="stylesheet" type="text/css" href="<?php base_url(); ?>assets/css/info.css"/>
+    </head>
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container text-center">
