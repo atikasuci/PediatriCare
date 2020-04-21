@@ -1,4 +1,12 @@
+<style>
+    body{
+        background-color:white;
+    }
+    .media{
+         padding-right:50px;
+    }
 
+    </style>
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container text-center">
@@ -7,14 +15,21 @@
             <a class="btn btn-primary btn-lg" href="#" role="button">klik disini</a>
         </div>
     </div>
+<br><br>
 
-    <div class="container">
+    <div class="container col-8">
         <div class="row">
-            <div class="col text-center">
+            <div class="col text-left">
                 <h3>Info Seputar Kesehatan</h3>
             </div>
         </div>
-        <br></br>
+        <br>
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav float-right">
+                <img height="500px" width="180px" src="<?php echo base_url(); ?>assets/images/ss.png"  >
+            </ul>
+        </div> <!-- /#sidebar-wrapper -->
+            
         <?php foreach ($info as $i) { ?>
             <div class="media position-relative">
                 <img src="<?=base_url()?>assets/images/info/<?= $i['photo'] ?>" class="mr-3" alt="..." style="width:30%;">
@@ -56,6 +71,7 @@
                         <label>Gambar</label><br>
                         <input type="file"  name="gambar">
                     </div>
+                    
                 </table>
             </div>
             <div class="modal-footer">
@@ -77,6 +93,7 @@
                     </center>
                 </div>
                 <div class="modal-body">
+                
                     <?php echo form_open(base_url().'InfoController/UpdateInfo/'.$i['id_info'], array('enctype' => 'multipart/form-data')); ?>
                     <table cellpadding="8">
                         <div class="form-group">
@@ -88,6 +105,7 @@
                             <textarea class="form-control" id="formGroupExampleInput" placeholder="Isi" name="isi" required><?= $i['isi'] ?></textarea> 
                         </div>
                         <div class="form-group">
+                            
                             <label for="file">Gambar</label><br>
                             <input type="file"  name="gambar">
                         </div>
@@ -102,3 +120,6 @@
         </div>
     </div>
 <?php } ?>
+
+<br><br><br><br>
+<footer>,</footer>
