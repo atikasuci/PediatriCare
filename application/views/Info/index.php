@@ -29,7 +29,7 @@
                 <img src="<?=base_url()?>assets/images/info/<?= $i['photo'] ?>" class="mr-3" alt="..." style="width:30%;">
                 <div class="media-body">
                     <h5 class="mt-0"><?= $i['judul'] ?></h5>
-                    <p><?= $i['isi'] ?></p>
+                    <p><?php echo substr($i['isi'], 0, 100)  ?>...</p>
                     <a href="<?= base_url('InfoController/view/') . $i['id_info'] ?>" class="stretched-link">klik disini</a>
                     <a type="button" class="btn btn-danger btn-sm" href="<?php echo base_url() . 'InfoController/DeleteInfo/' . $i['id_info'] ?>" onClick="return confirm('Apakah Anda Yakin?')">Delete</a></td>
                     <a type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#UpdateInfo<?=$i['id_info']?>"> Update</a>
