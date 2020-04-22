@@ -7,7 +7,8 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="card" style="width: 30rem;">
+            <div class="card-body text-center" ><div class="container">
         <?php foreach ($rumahsakit as $rs) { ?>
             <div class="row">
                 <div class="media position-relative">
@@ -55,6 +56,8 @@
                 </div>
             </div>
         </div>
+        </div>
+    </div>
 
     <?php foreach ($rumahsakit as $rs) {?>
         <div class="modal fade" id="UpdateRS<?=$rs['id_rumahsakit']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
